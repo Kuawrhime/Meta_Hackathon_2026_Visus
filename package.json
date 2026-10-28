@@ -1,0 +1,47 @@
+{
+    "name":  "visus",
+    "version":  "1.0.0",
+    "private":  true,
+    "description":  "VISUS — See words. Learn worlds. Local-first language immersion browser extension",
+    "type":  "module",
+    "scripts":  {
+                    "dev":  "node scripts/dev.mjs",
+                    "build":  "node scripts/build.mjs chrome",
+                    "build:chrome":  "node scripts/build.mjs chrome",
+                    "build:firefox":  "node scripts/build.mjs firefox",
+                    "build:edge":  "node scripts/build.mjs edge",
+                    "build:brave":  "node scripts/build.mjs brave",
+                    "build:all":  "node scripts/build.mjs all",
+                    "typecheck":  "tsc --noEmit",
+                    "test":  "vitest run tests/unit tests/integration tests/security",
+                    "test:unit":  "vitest run tests/unit tests/integration",
+                    "test:e2e":  "playwright test",
+    "test:perf":  "vitest run tests/performance",
+    "dict:build":  "node scripts/build-dictionaries/convert-all.mjs",
+    "dict:licenses":  "node scripts/validate-licenses.mjs && node scripts/verify-integrity.mjs",
+                    "lint":  "tsc --noEmit"
+                },
+    "dependencies":  {
+                         "jszip":  "^3.10.1",
+                         "lucide-react":  "^0.469.0",
+                         "pdfjs-dist":  "^4.9.155",
+                         "react":  "^18.3.1",
+                         "react-dom":  "^18.3.1",
+                         "webextension-polyfill":  "^0.12.0"
+                     },
+    "devDependencies":  {
+                            "@playwright/test":  "^1.49.1",
+                            "@tailwindcss/vite":  "^4.0.0",
+                            "@types/chrome":  "^0.3.7",
+                            "@types/node":  "^26.6.6",
+                            "@types/react":  "^18.3.18",
+                            "@types/react-dom":  "^18.3.5",
+                            "@vitejs/plugin-react":  "^4.3.4",
+                            "fake-indexeddb":  "^6.0.0",
+                            "jsdom":  "^30.1.3",
+                            "tailwindcss":  "^4.0.0",
+                            "typescript":  "^5.7.2",
+                            "vite":  "^6.0.7",
+                            "vitest":  "^2.1.8"
+                        }
+}

@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+:root { color-scheme: light; --visus-terracotta:#c2410c; --visus-clay:#a9714b; --visus-petrol:#0f4c5c; --visus-iris:#5aa9c2; --visus-paper:#f4ecdb; --visus-ink:#2b251d; --visus-hair:#ddd0b8; --visus-taupe:#a79c8a; --lf-accent:var(--visus-terracotta); --lf-accent-soft:#ffedd5; --lf-paper:var(--visus-paper); --lf-ink:var(--visus-ink); }
+.dark { color-scheme: dark; --visus-paper:#37322a; --visus-ink:#f2ead9; --visus-hair:#57503f; --lf-paper:#37322a; --lf-ink:#f2ead9; }
+body { font-family: ui-sans-system, system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif; }
+.lf-serif { font-family: "Cormorant Garamond", "Playfair Display", Georgia, "Times New Roman", "Songti SC", "Noto Serif CJK SC", serif; }
+.visus-paper { background-color: var(--visus-paper); background-image: radial-gradient(rgba(120,90,40,.055) 1px, transparent 1.4px), radial-gradient(rgba(120,90,40,.04) 1px, transparent 1.2px); background-size: 90px 90px, 47px 47px; background-position: 0 0, 23px 31px; }
+.dark .visus-paper { background-image: radial-gradient(rgba(240,225,190,.045) 1px, transparent 1.4px), radial-gradient(rgba(240,225,190,.03) 1px, transparent 1.2px); }
+.v-title { font-family: "Cormorant Garamond", "Playfair Display", Georgia, "Songti SC", "Noto Serif CJK SC", serif; font-size: 2.9rem; line-height: 1.05; font-weight: 500; letter-spacing: .01em; }
+.v-kicker { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--visus-clay); font-weight: 600; }
+.v-sub { font-family: Georgia, "Songti SC", serif; font-size: 15px; }
+.v-hair { border-color: var(--visus-hair); }
+.v-statnum { font-family: "Cormorant Garamond", Georgia, serif; font-size: 2.1rem; line-height: 1; font-weight: 500; }
+.v-statlabel { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; opacity: .55; margin-top: 6px; }
+.v-levelbtn { width: 44px; height: 44px; border: 1px solid var(--visus-hair); display: inline-flex; align-items: center; justify-content: center; font-size: 13px; background: transparent; }
+.v-levelbtn[data-on="true"] { background: var(--visus-clay); color: #fff7ea; border-color: var(--visus-clay); }
+input[type="range"] { accent-color: var(--visus-clay); }
+input[type="checkbox"] { accent-color: var(--visus-clay); }
+::-webkit-scrollbar { width: 10px; height: 10px; } ::-webkit-scrollbar-thumb { background: #d6c9ae; border-radius: 8px; border: 2px solid transparent; background-clip: content-box; }
+.dark ::-webkit-scrollbar-thumb { background: #57503f; border: 2px solid transparent; background-clip: content-box; }
+.lf-w { border-radius: 3px; cursor: pointer; transition: background .15s ease, box-shadow .15s ease; }
+.lf-w:hover { box-shadow: inset 0 -2px 0 rgba(169,113,75,.6); }
+.lf-new { background: #bfdbfe; } .dark .lf-new { background: #1e3a5f; color:#dbeafe; }
+.lf-l1 { background: #fde047; } .dark .lf-l1 { background: #713f12; color:#fef9c3; }
+.lf-l2 { background: #fef08a; } .dark .lf-l2 { background: #5f4b0a; color:#fefce8; }
+.lf-l3 { background: #fef9c3; text-decoration: underline dotted #ca8a04; text-underline-offset: 3px; }
+.dark .lf-l3 { background: #423606; }
+.lf-l4 { background: transparent; text-decoration: underline dotted #ca8a04; text-underline-offset: 3px; }
+.lf-known, .lf-ignored { background: transparent; }
+.lf-nohl .lf-w { background: transparent !important; text-decoration: none !important; }
+@keyframes lf-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.lf-fade { animation: lf-fade .25s ease both; }
+@media (prefers-reduced-motion: reduce) { .lf-fade { animation: none; } * { transition-duration: .01ms !important; } }
+.visus-panel { border-radius: 22px; box-shadow: 0 24px 60px rgba(43,37,29,.25); }
+.visus-card { border-radius: 16px; box-shadow: 0 8px 24px rgba(43,37,29,.08); }
+:focus-visible { outline: 2px solid #2f6f8f; outline-offset: 2px; }
